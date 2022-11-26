@@ -30,4 +30,18 @@ tag:
 push:
 	docker push  ghcr.io/tommy-u/sym:latest
 
+bridge:
+	docker network create --driver=bridge  --subnet=192.168.19.0/24  --ip-range=192.168.19.2/24  --gateway=192.168.19.1  br0
+
+#dnf group install "C Development Tools and Libraries" "Development Tools"
+# make install_prereqs
+# mount /dev/sda1 local_disk/
+# cp -r linux_ro/ linux
+# git checkout 5.14-config
+# accept KSCAN default option (we think is b/c new compiler option)
+# don't watch it build (privacy)
+# dnf install openssl
+# sudo dnf install fedpkg fedora-packager rpmdevtools ncurses-devel pesign grubby
+# affirmations
+
 
