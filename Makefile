@@ -7,8 +7,6 @@ docker_run:
 docker_rm:
 	docker rm linux_builder36
 
-install_git_make:
-	dnf install git make -y
 
 install_docker:
 	sudo dnf install dnf-plugins-core -y
@@ -32,9 +30,6 @@ run_tu_fed36:
 attach_tu_fed36:
 	sudo docker attach tu_fed36
 
-install_stuff:
-	sudo dnf install git make -y
-
 pull:
 	docker pull ghcr.io/tommy-u/sym:latest
 
@@ -47,18 +42,28 @@ push:
 bridge:
 	docker network create --driver=bridge  --subnet=192.168.19.0/24  --ip-range=192.168.19.2/24  --gateway=192.168.19.1  br0
 
+install_git_make:
+	dnf install git make  -y
+
 group_install:
 	dnf group install "C Development Tools and Libraries" "Development Tools" -y
-	dnf install fedpkg fedora-packager rpmdevtools ncurses-devel pesign grubby -y
-	dnf install openssl -y
+	dnf install fedpkg fedora-packager rpmdevtools ncurses-devel pesign grubby openssl-devel bc openssl htop the_silver_searcher -y
 
 
-# make install_prereqs
+
+# Setup new cont #############
+# mkdir ~/local_disk
 # mount /dev/sda1 local_disk/
+# pull run repo
+# dnf install make git
+# make install_prereqs
+# Install programs
+# add to bashrc
 # cp -r linux_ro/ linux
+# switch onto right branch
 # git checkout 5.14-config
+# pick a good config
+# make olddefconfig
 # accept KSCAN default option (we think is b/c new compiler option)
-# don't watch it build (privacy)
-# affirmations
-
+# make -j32
 
