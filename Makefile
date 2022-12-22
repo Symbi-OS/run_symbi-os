@@ -47,7 +47,7 @@ install_git_make:
 
 group_install:
 	dnf group install "C Development Tools and Libraries" "Development Tools" -y
-	dnf install fedpkg fedora-packager rpmdevtools ncurses-devel pesign grubby openssl-devel bc openssl htop the_silver_searcher redis psmisc @virtualization -y
+	dnf install fedpkg fedora-packager rpmdevtools ncurses-devel pesign grubby openssl-devel bc openssl htop the_silver_searcher redis psmisc libvirt @virtualization -y
 
 
 
